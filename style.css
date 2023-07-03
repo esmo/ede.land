@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@100;400;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Sarabun", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+}
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+  height: 100px;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  background: rgba(34, 68, 119, 0.8);
+}
+header .logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 50%;
+  filter: grayscale(50%);
+  background: url("media/ede.jpeg") center;
+  background-size: contain;
+  transform: scale(1);
+  transition: transform 0.2s;
+}
+header .logo:hover {
+  transform: scale(1.5);
+}
+header label[for=burger-toggle] {
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+header label[for=burger-toggle],
+header #burger-toggle {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  header #burger-toggle ~ nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    flex-direction: column;
+    z-index: 4;
+    background: #ccc;
+    opacity: 0;
+    transition: opacity 0.5s;
+    visibility: hidden;
+  }
+  header label[for=burger-toggle] {
+    display: block;
+  }
+  header #burger-toggle:checked ~ nav {
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+header nav {
+  display: flex;
+  gap: 5px;
+  font-size: 35px;
+}
+header nav a {
+  transform: scale(1);
+  transition: transform 0.2s;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: -2px 0 #000, 0px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+header nav a:hover {
+  transform: scale(1.5);
+}
+header nav a:hover {
+  position: relative;
+  z-index: 1;
+}
+header nav a[href="#page-1"], header nav a[href="#page-1"]:active {
+  color: #ca5;
+}
+header nav a[href="#page-2"], header nav a[href="#page-2"]:active {
+  color: #c45555;
+}
+header nav a[href="#page-3"], header nav a[href="#page-3"]:active {
+  color: #7b9d58;
+}
+header nav a:hover {
+  color: #ccc;
+}
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+}
+
+main {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  height: 100vh;
+}
+main section {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 20px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  padding: 140px 100px 100px;
+}
+main section#page-1 {
+  background: #ca5;
+}
+main section#page-2 {
+  background: #c45555;
+}
+main section#page-3 {
+  background: #7b9d58;
+}
+main section article {
+  margin: 0 auto;
+  max-width: 70em;
+  position: relative;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.0666666667);
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+  main section {
+    padding: 120px 20px 0;
+  }
+}
+main footer {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: rgba(34, 51, 68, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main footer a {
+  color: #ccc;
+}
+
+/*# sourceMappingURL=style.css.map */
